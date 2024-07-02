@@ -21,14 +21,14 @@ class UI {
 
         // Mensaje de error
         divMensaje.textContent = mensaje;
-
+        divMensaje.dataset.cy = "alerta"
         // Insertar en el DOM
         document.querySelector('#contenido').insertBefore( divMensaje , document.querySelector('.agregar-cita'));
 
         // Quitar el alert despues de 3 segundos
         setTimeout( () => {
             divMensaje.remove();
-        }, 3000);
+        }, 30000);
     
       
    }
@@ -79,6 +79,7 @@ class UI {
 
 
             btnEditar.classList.add('btn', 'btn-info');
+            btnEditar.dataset.cy = "test-editar";
             btnEditar.innerHTML = 'Editar <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>'
 
             // Agregar al HTML
@@ -97,7 +98,7 @@ class UI {
 
    textoHeading(citas) {
         if(citas.length > 0 ) {
-            heading.textContent = 'Administra tus Citas '
+            heading.textContent = 'Administra tus Citas'
         } else {
             heading.textContent = 'No hay Citas, comienza creando una'
         }
