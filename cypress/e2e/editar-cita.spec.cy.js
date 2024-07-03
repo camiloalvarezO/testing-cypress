@@ -56,11 +56,9 @@ describe('Crea una nueva cita y se edita', () => {
 
             cy.get('[data-cy=alerta]')
                 .invoke('text')
-                .should('eq','Se agregó correctamente')
+                .should('eq','Guardado Correctamente')
 
-            cy.get('[data-cy=alerta]')
-                .invoke('text')
-                .should('eq','Se agregó correctamente')
+            
     });
 
     

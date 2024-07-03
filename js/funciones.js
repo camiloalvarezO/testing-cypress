@@ -95,6 +95,8 @@ export function eliminarCita(id) {
     administrarCitas.eliminarCita(id);
 
     ui.imprimirCitas(administrarCitas)
+
+    ui.imprimirAlerta('Cita eliminada correctamente')
 }
 
 export function cargarEdicion(cita) {

@@ -8,6 +8,12 @@ class UI {
     }
 
     imprimirAlerta(mensaje, tipo) {
+
+        const alertaflag = document.querySelector('.alert')
+
+        if(alertaflag){
+            alertaflag.remove()
+        }
         // Crea el div
         const divMensaje = document.createElement('div');
         divMensaje.classList.add('text-center', 'alert', 'd-block', 'col-12');
@@ -28,7 +34,7 @@ class UI {
         // Quitar el alert despues de 3 segundos
         setTimeout( () => {
             divMensaje.remove();
-        }, 30000);
+        }, 15000);
     
       
    }
@@ -72,7 +78,7 @@ class UI {
 
             btnEliminar.classList.add('btn', 'btn-danger', 'mr-2');
             btnEliminar.innerHTML = 'Eliminar <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>'
-
+            btnEliminar.dataset.cy = 'btnEliminar';
             // Añade un botón de editar...
             const btnEditar = document.createElement('button');
             btnEditar.onclick = () => cargarEdicion(cita);
