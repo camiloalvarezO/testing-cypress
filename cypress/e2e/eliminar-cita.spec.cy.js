@@ -31,6 +31,11 @@ describe('Crea una nueva cita y se edita', () => {
         cy.get('[data-cy="citas-heading"]')
             .invoke('text')
             .should('eq','No hay Citas, comienza creando una')
+
+            cy.get('[data-cy="citas-heading"]')
+            .invoke('text')
+            .should('not.eq','Administra tus Citas')
+
     });
     
     
